@@ -1,4 +1,4 @@
-package com.example.alpha_shiftmanagement.view;
+package com.example.alpha_shiftmanagement.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.alpha_shiftmanagement.R;
+import com.example.alpha_shiftmanagement.view.CreateUserProfile;
 
 public class Fragment1 extends Fragment {
     private static final String TAG = "Fragment1";
@@ -58,7 +59,7 @@ public class Fragment1 extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(),"Going to Third Activity", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(),ThirdActivity.class);
+                Intent intent = new Intent(getActivity(), CreateUserProfile.class);
                 startActivity(intent);
             }
         });

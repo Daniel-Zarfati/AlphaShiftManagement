@@ -58,7 +58,7 @@
                     android:layout_gravity="left"
                     android:layout_marginTop="52.7dp"
                     android:text="Enter your mail"
-                    android:textColor="#fefefe"
+                    android:textColor="@android:color/white"
                     android:textSize="20sp" />
 
 
@@ -89,7 +89,7 @@
                     android:layout_gravity="left"
                     android:layout_marginTop="37dp"
                     android:text="Enter your password"
-                    android:textColor="#fefefe"
+                    android:textColor="@android:color/white"
                     android:textSize="20sp" />
 
                 <LinearLayout
@@ -128,29 +128,24 @@
                     android:text="Manager?"
                     android:textColor="#454545"
                     android:textSize="12sp"
+                    android:onClick="movePage"
                     app:backgroundTint="#D000DBC6" />
 
             </LinearLayout>
 
             <FrameLayout
-                android:layout_height="match_parent"
-                android:layout_width="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
                 <ImageView
                     android:id="@+id/loginBtn"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_gravity="bottom|center"
                     android:layout_marginBottom="22dp"
-                    android:src="@drawable/okwhite"
                     android:onClick="SignIn"
-                    />
+                    android:src="@drawable/okwhite" />
             </FrameLayout>
-
-            <ProgressBar
-                android:id="@+id/progress_circular_login"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center" />
 
 
         </FrameLayout>

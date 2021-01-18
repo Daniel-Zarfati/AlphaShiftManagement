@@ -1,4 +1,4 @@
-package com.example.alpha_shiftmanagement.view;
+package com.example.alpha_shiftmanagement.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +10,7 @@ import com.example.alpha_shiftmanagement.R;
 
 public class SecondActivity extends AppCompatActivity {
 
-    public static final String TAG = "MainActivity";
+    public static final String TAG = "SecondActivity";
 
     private SectionsStatePagerAdapter mSectionsStatePagerAdapter;
     private ViewPager mViewPager;
@@ -38,4 +38,6 @@ public class SecondActivity extends AppCompatActivity {
     public void setmViewPager(int fragmentNumber){    // move threw fragments
         mViewPager.setCurrentItem(fragmentNumber);
     }
+
+
 }

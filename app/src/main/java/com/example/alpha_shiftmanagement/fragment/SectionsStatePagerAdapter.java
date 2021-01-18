@@ -1,4 +1,4 @@
-package com.example.alpha_shiftmanagement.view;
+package com.example.alpha_shiftmanagement.fragment;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

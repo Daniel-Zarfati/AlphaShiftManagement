@@ -47,7 +47,7 @@
         android:layout_weight="1"
         android:layout_marginTop="10dp"
         android:id="@+id/btnNavThirdActivity"
-        android:text="Go to Second Activity"/>
+        android:text="Go to Third Activity"/>
 
 
 </LinearLayout>
