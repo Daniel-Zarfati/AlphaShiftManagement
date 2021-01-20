@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#28363D"
-    android:orientation="vertical"
-    tools:context=".view.MainActivity">
+    tools:context=".view.NewMainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +15,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
 
             <ImageView
@@ -38,7 +37,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="35dp"
                 android:layout_marginRight="35dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginBottom="90dp"
                 android:orientation="vertical"
                 android:paddingTop="215dp">
 
@@ -119,25 +118,36 @@
                     android:layout_marginTop="7dp"
                     android:background="#f2f2f3" />
 
-
-                <ImageButton
-                    android:id="@+id/btn_SignIn"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_gravity="bottom|center"
-                    android:layout_marginBottom="22dp"
-                    android:clickable="true"
-                    android:src="@drawable/common_google_signin_btn_text_light_focused" />
-
-                <TextView
-                    android:id="@+id/btn_SignUp"
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="25dp"
+                    android:text="Forgot Password"
+                    android:textColor="#454545"
+                    android:textSize="12sp"
+
+                    app:backgroundTint="#D000DBC6" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="25dp"
                     android:text="SignUp"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp" />
+                    android:textColor="#454545"
+                    android:textSize="12sp"
+
+                    app:backgroundTint="#D000DBC6" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:visibility="visible"/>
 
 
             </LinearLayout>
@@ -146,29 +156,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/forgotPassword"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="130dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_gravity="bottom"
-                    android:text="forgot Password?"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp" />
+                <ImageView
+                    android:id="@+id/loginBtn2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="50dp"
 
-
+                    android:src="@drawable/okwhite" />
             </FrameLayout>
 
 
         </FrameLayout>
-
-        <ProgressBar
-            android:id="@+id/PB_progressBar"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:visibility="invisible" />
     </LinearLayout>
 </LinearLayout>

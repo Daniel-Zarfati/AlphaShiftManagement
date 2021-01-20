@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="#28363D"
-    tools:context=".view.CreateUserProfile">
+    tools:context=".view.NewRegisterActivity">
 
     <ImageView
         android:id="@+id/ProfileImage"
@@ -16,11 +16,11 @@
         android:paddingTop="50dp"
         android:clickable="true"
         android:background="@drawable/okwhite"
-        android:onClick="ChooseImage"
+
         android:layout_marginTop="25dp"/>
 
     <TextView
-        android:id="@+id/textTitle"
+        android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="40dp"
@@ -32,7 +32,7 @@
         android:textSize="25sp" />
 
     <EditText
-        android:id="@+id/btnSIname"
+        android:id="@+id/ET_Name"
         style="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -45,7 +45,7 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/btnSIIDnumber"
+        android:id="@+id/ET_IDnumber"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
@@ -57,7 +57,7 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/btnSIphoneNumber"
+        android:id="@+id/ET_phoneNumber"
         style="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -70,7 +70,7 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/btnSIcity"
+        android:id="@+id/ET_city"
         style="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -83,7 +83,7 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/btnSIemail"
+        android:id="@+id/ET_email"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
@@ -95,7 +95,7 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/btnSIpassword"
+        android:id="@+id/ET_password"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
@@ -107,14 +107,15 @@
         android:textSize="24sp" />
 
     <ProgressBar
-        android:id="@+id/progressbar_SI"
+        android:id="@+id/PB_progressBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:indeterminate="true"
         android:visibility="invisible"/>
+
     <Button
-        android:id="@+id/btnSISignUp"
+        android:id="@+id/registerUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"

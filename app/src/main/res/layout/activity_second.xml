@@ -8,9 +8,29 @@
     android:orientation="vertical"
     tools:context=".view.MainActivity">
 
-    <androidx.viewpager.widget.ViewPager
+    <TextView
+        android:id="@+id/TV_greetings"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/container"/>
+        android:layout_marginTop="10dp"
+        android:layout_height="47dp"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="607dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/SignOut"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:text="Log out"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        />
+
 
 </LinearLayout>

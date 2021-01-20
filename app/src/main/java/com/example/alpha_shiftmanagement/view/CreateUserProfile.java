@@ -24,7 +24,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -43,6 +45,7 @@ public class CreateUserProfile extends AppCompatActivity {
     private static final int PICK_IMAGE = 1;
     UploadTask uploadTask;
     FirebaseStorage firebaseStorage;
+    FirebaseAuth mAuth;
     StorageReference storageReference;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference documentReference;
@@ -53,6 +56,7 @@ public class CreateUserProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user_profile);
+        mAuth = FirebaseAuth.getInstance();
 
         name = findViewById(R.id.btnSIname);
         IDnumber = findViewById(R.id.btnSIIDnumber);
@@ -62,13 +66,17 @@ public class CreateUserProfile extends AppCompatActivity {
         password = findViewById(R.id.btnSIpassword);
 
         button = findViewById(R.id.btnSISignUp);
-        ShowProfile_SI =findViewById(R.id.ShowProfile_SI);
+        //ShowProfile_SI =findViewById(R.id.ShowProfile_SI);
         imageView = findViewById(R.id.ProfileImage);
         progressBar = findViewById(R.id.progressbar_SI);
         textTitle = findViewById(R.id.textTitle);
 
-        documentReference = db.collection("user").document("profile");
-        storageReference = firebaseStorage.getInstance().getReference("profile images");
+        //NewUser user1 = new NewUser(name.toString(),IDnumber.toString(),phoneNumber.toString(),city.toString(),email.toString(),password.toString());
+        //CollectionReference ref = db.collection("Users");
+
+        documentReference = db.collection("All Users").document("profile");
+        //documentReference = db.collection("All Users").document("profile");
+        storageReference = FirebaseStorage.getInstance().getReference("profile images");
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +125,10 @@ public class CreateUserProfile extends AppCompatActivity {
             String City = city.getText().toString();
 
 
+//            NewUser user1 = new NewUser(name,IDnumber,phoneNumber,city,email,password);
+//            CollectionReference ref = db.collection("Users");
+
+
             if(!TextUtils.isEmpty(Name) || !TextUtils.isEmpty(iDnumber) || !TextUtils.isEmpty(PhoneNumber) || !TextUtils.isEmpty(Email) || !TextUtils.isEmpty(Password) || !TextUtils.isEmpty(City)|| imageUri !=null){
 
                 progressBar.setVisibility(View.VISIBLE);
@@ -137,6 +149,7 @@ public class CreateUserProfile extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Uri> task) {
                                 if(task.isSuccessful()){
                                     Uri downloadUri = task.getResult();   // getting uri from server
+
                                     Map<String,String> profile = new HashMap<>();
 
                                     profile.put("Name", Name);
@@ -146,6 +159,23 @@ public class CreateUserProfile extends AppCompatActivity {
                                     profile.put("email", Email);
                                     profile.put("password", Password);
                                     profile.put("url",downloadUri.toString());
+
+
+//                                    documentReference.set(profile).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                                        @Override
+//                                        public void onSuccess(DocumentReference documentReference) {
+//                                            Toast.makeText(CreateUserProfile.this, "User1 added", Toast.LENGTH_SHORT).show();
+//
+//                                        }
+//                                    });
+//                                    }
+//                                    ref.add(user1).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                                        @Override
+//                                        public void onSuccess(DocumentReference documentReference) {
+//                                            Toast.makeText(CreateUserProfile.this, "User1 added", Toast.LENGTH_SHORT).show();
+//                                        }
+//                                    });
+
 
                                     documentReference.set(profile).addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
@@ -190,6 +220,47 @@ public class CreateUserProfile extends AppCompatActivity {
 
         }
 
+
+        //Edit Data!
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        documentReference.get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.getResult().exists()){
+                            String name_result = task.getResult().getString("Name");
+                            String IDnumber_result = task.getResult().getString("IDnumber");
+                            String phoneNumber_result = task.getResult().getString("phoneNumber");
+                            String city_result = task.getResult().getString("city");
+                            String email_result = task.getResult().getString("email");
+                            String password_result = task.getResult().getString("password");
+                            String url = task.getResult().getString("url");
+
+                            //Set all for edit
+                            Picasso.get().load(url).into(imageView);
+                            name.setText(name_result);
+                            IDnumber.setText(IDnumber_result);
+                            phoneNumber.setText(phoneNumber_result);
+                            city.setText(city_result);
+                            email.setText(email_result);
+                            password.setText(password_result);
+
+                        }else {
+                            Toast.makeText(CreateUserProfile.this,"No Profile exist",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+    }
 
 
     public void ShowProfile(View view) {
