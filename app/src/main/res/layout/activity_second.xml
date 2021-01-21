@@ -32,5 +32,11 @@
         android:textSize="15sp"
         />
 
+    <Button
+        android:id="@+id/CardView_Booking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
 
 </LinearLayout>

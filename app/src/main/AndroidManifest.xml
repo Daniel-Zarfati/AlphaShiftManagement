@@ -11,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AlphaShiftManagement">
-        <activity android:name=".view.NewForgotPasswordActivity"></activity>
+        <activity android:name=".view.IntroductoryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.NewForgotPasswordActivity" />
         <activity android:name=".view.NewShowProfileActivity" />
         <activity android:name=".view.NewRegisterActivity" />
         <activity android:name=".view.NewMainActivity" />
@@ -20,11 +27,6 @@
         <activity android:name=".view.ShowUserProfile" />
         <activity android:name=".view.CreateUserProfile" />
         <activity android:name=".view.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".fragment.SecondActivity" />
     </application>

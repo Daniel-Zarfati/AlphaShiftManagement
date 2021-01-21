@@ -16,8 +16,9 @@
         android:paddingTop="50dp"
         android:clickable="true"
         android:background="@drawable/okwhite"
-
         android:layout_marginTop="25dp"/>
+<!--        android:onClick="ChooseImageProfile"-->
+
 
     <TextView
         android:id="@+id/banner"
