@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,11 +26,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView register, forgotPassword;
     private EditText Et_Email, Et_Password;
-    private ImageButton SignIn;
+    //private ImageButton SignIn;
+    private ImageView loginBtn;
 
 
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
+
 
 
     @Override
@@ -41,8 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      register = (TextView) findViewById(R.id.btn_SignUp);
      register.setOnClickListener(this);
 
-     SignIn = (ImageButton) findViewById(R.id.btn_SignIn);
-     SignIn.setOnClickListener(this);
+//     SignIn = (ImageButton) findViewById(R.id.btn_SignIn);
+//     SignIn.setOnClickListener(this);
 
      Et_Email = (EditText) findViewById(R.id.text_user_email);
      Et_Password = (EditText) findViewById(R.id.text_user_password);
@@ -54,7 +56,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
      mAuth = FirebaseAuth.getInstance();
 
+     loginBtn = (ImageView) findViewById(R.id.loginBtn2);
+     loginBtn.setOnClickListener(this);
+
+
+
+
     }
+
+
 
 
     @Override
@@ -64,13 +74,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this,NewRegisterActivity.class));
                 break;
 
-            case R.id.btn_SignIn:
-                userLogin();
-                break;
+//            case R.id.btn_SignIn:
+//                userLogin();
+//                break;
 
             case R.id.forgotPassword:
                 startActivity(new Intent(this,NewForgotPasswordActivity.class));
                 break;
+
+            case R.id.loginBtn2:
+                userLogin();
+                break;
+
+            case R.id.Security:
+                startActivity(new Intent(this,ManagerLogin.class));
+
+
+
         }
 
     }
@@ -89,13 +109,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Et_Email.requestFocus();
             return;
         }
-
         if(password.isEmpty()){
             Et_Password.setError("Password is required");
             Et_Password.requestFocus();
             return;
         }
-
         if(password.length()<6){
             Et_Password.setError("Min password length should be 6 characters!");
             Et_Password.requestFocus();

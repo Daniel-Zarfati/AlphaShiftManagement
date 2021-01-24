@@ -36,7 +36,7 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CreateUserProfile extends AppCompatActivity {
+public class ManagerLogin extends AppCompatActivity {
 
     EditText name, IDnumber, phoneNumber, city, email, password;
     Button button,ShowProfile_SI;
@@ -55,21 +55,21 @@ public class CreateUserProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_user_profile);
+        setContentView(R.layout.activity_manager_login);
         mAuth = FirebaseAuth.getInstance();
 
-        name = findViewById(R.id.btnSIname);
-        IDnumber = findViewById(R.id.btnSIIDnumber);
-        phoneNumber = findViewById(R.id.btnSIphoneNumber);
-        city = findViewById(R.id.btnSIcity);
-        email = findViewById(R.id.btnSIemail);
-        password = findViewById(R.id.btnSIpassword);
-
-        button = findViewById(R.id.btnSISignUp);
-        //ShowProfile_SI =findViewById(R.id.ShowProfile_SI);
-        imageView = findViewById(R.id.ProfileImage);
-        progressBar = findViewById(R.id.progressbar_SI);
-        textTitle = findViewById(R.id.textTitle);
+//        name = findViewById(R.id.btnSIname);
+//        IDnumber = findViewById(R.id.btnSIIDnumber);
+//        phoneNumber = findViewById(R.id.btnSIphoneNumber);
+//        city = findViewById(R.id.btnSIcity);
+//        email = findViewById(R.id.btnSIemail);
+//        password = findViewById(R.id.btnSIpassword);
+//
+//        button = findViewById(R.id.btnSISignUp);
+//        //ShowProfile_SI =findViewById(R.id.ShowProfile_SI);
+//        imageView = findViewById(R.id.ProfileImage);
+//        progressBar = findViewById(R.id.progressbar_SI);
+//        textTitle = findViewById(R.id.textTitle);
 
         //NewUser user1 = new NewUser(name.toString(),IDnumber.toString(),phoneNumber.toString(),city.toString(),email.toString(),password.toString());
         //CollectionReference ref = db.collection("Users");
@@ -182,9 +182,9 @@ public class CreateUserProfile extends AppCompatActivity {
                                         public void onSuccess(Void aVoid) {
 
                                             progressBar.setVisibility(View.INVISIBLE);
-                                            Toast.makeText(CreateUserProfile.this, "Profile Created", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(ManagerLogin.this, "Profile Created", Toast.LENGTH_SHORT).show();
 
-                                            Intent intent = new Intent(CreateUserProfile.this, ShowUserProfile.class);
+                                            Intent intent = new Intent(ManagerLogin.this, ShowUserProfile.class);
                                             startActivity(intent);
 
                                         }
@@ -203,13 +203,13 @@ public class CreateUserProfile extends AppCompatActivity {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(CreateUserProfile.this, "failed",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ManagerLogin.this, "failed",Toast.LENGTH_SHORT).show();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(CreateUserProfile.this, "failed",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ManagerLogin.this, "failed",Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -250,7 +250,7 @@ public class CreateUserProfile extends AppCompatActivity {
                             password.setText(password_result);
 
                         }else {
-                            Toast.makeText(CreateUserProfile.this,"No Profile exist",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ManagerLogin.this,"No Profile exist",Toast.LENGTH_SHORT).show();
                         }
                     }
                 })

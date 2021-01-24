@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="#28363D"
-    tools:context=".view.CreateUserProfile">
+    tools:context=".view.ManagerLogin">
 
     <ImageView
         android:id="@+id/ProfileImage"
@@ -19,48 +19,12 @@
         android:onClick="ChooseImage"
         android:layout_marginTop="25dp"/>
 
-    <TextView
-        android:id="@+id/textTitle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
-        android:layout_weight="1"
-        android:text="Welcome to TQS"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textSize="25sp" />
-
-    <EditText
-        android:id="@+id/btnSIname"
-        style="@android:color/white"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif"
-        android:hint="Name"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white"
-        android:textSize="24sp" />
-
-    <EditText
-        android:id="@+id/btnSIIDnumber"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif"
-        android:hint="IDnumber"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white"
-        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/btnSIphoneNumber"
         style="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="9dp"
         android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:fontFamily="sans-serif"
@@ -69,35 +33,11 @@
         android:textColorHint="@android:color/white"
         android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/btnSIcity"
-        style="@android:color/white"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif"
-        android:hint="City"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white"
-        android:textSize="24sp" />
-
-    <EditText
-        android:id="@+id/btnSIemail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif"
-        android:hint="Email"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white"
-        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/btnSIpassword"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="461dp"
         android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:fontFamily="sans-serif"

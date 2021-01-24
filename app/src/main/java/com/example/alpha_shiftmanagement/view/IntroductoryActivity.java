@@ -13,6 +13,7 @@ import com.example.alpha_shiftmanagement.R;
 public class IntroductoryActivity extends AppCompatActivity {
 
     ImageView splashImag;
+
     LottieAnimationView lottieAnimationView;
 
 
@@ -24,8 +25,8 @@ public class IntroductoryActivity extends AppCompatActivity {
         splashImag = findViewById(R.id.image);
         lottieAnimationView =  findViewById(R.id.lottie);
 
-        //splashImag.animate().translationY(-1600).setDuration(1000).setStartDelay(1800); // 1000 equels 1 sec
-        lottieAnimationView.animate().translationY(-1400).setDuration(1000).setStartDelay(1800); // 1000 equels 1 sec
+        splashImag.animate().translationY(-1600).setDuration(1000).setStartDelay(1950); // 1000 equels 1 sec
+        lottieAnimationView.animate().translationY(-1400).setDuration(1000).setStartDelay(2000); // 1000 equels 1 sec
 
        // splashImag.animate().translationY(-1600).setDuration(1000).setStartDelay(5000); // 1000 equels 1 sec
       //  lottieAnimationView.animate().translationY(1400).setDuration(1000).setStartDelay(5000); // 1000 equels 1 sec

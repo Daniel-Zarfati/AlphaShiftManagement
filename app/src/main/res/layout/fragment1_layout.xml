@@ -8,43 +8,55 @@
     android:orientation="vertical">
 
 
-
-
-    <Button
-        android:id="@+id/btnNavFrag1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif"
-        android:text="Go to Fragment 1" />
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
 
-    <Button
-        android:id="@+id/btnNavFrag2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif"
-        android:text="Go to Fragment 2" />
 
-    <Button
-        android:id="@+id/btnNavFrag3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif"
-        android:text="Go to Fragment 3" />
+        >
 
-    <Button
-        android:id="@+id/btnNavThirdActivity"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:fontFamily="sans-serif"
-        android:text="Go to Third Activity" />
+        <Button
+            android:id="@+id/btnNavFrag1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:text="Go to Fragment 1"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnNavFrag2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:text="Go to Fragment 2"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnNavFrag3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:text="Go to Fragment 3"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnNavThirdActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:text="Go to Third Activity"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -18,8 +18,25 @@ public class User {
         this.City = city;
         this.Email = email;
         this.Password = password;
-//        this.Salary = salary;
-//        this.GardId = gardId;
-//        this.IsManager = isManager;
+
+    }
+
+    public User(String name, String idNumber, String phoneNumber, String city, String email, String password, String salary, boolean gardId, boolean isManager) {
+        Name = name;
+        IdNumber = idNumber;
+        PhoneNumber = phoneNumber;
+        City = city;
+        Email = email;
+        Password = password;
+        Salary = salary;
+        GardId = gardId;
+        IsManager = isManager;
+    }
+
+    public Double SalaryCalc(String StartHour,String EndHour,String EventSalary){
+
+            // fill here
+
+        return 1.1;
     }
 }

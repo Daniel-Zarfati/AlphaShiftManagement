@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.alpha_shiftmanagement.R;
-import com.example.alpha_shiftmanagement.view.CreateUserProfile;
+import com.example.alpha_shiftmanagement.view.ManagerLogin;
 
 public class Fragment2 extends Fragment {
     private static final String TAG = "Fragment2";
@@ -59,7 +59,7 @@ public class Fragment2 extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(),"Going to Third Activity", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), CreateUserProfile.class);
+                Intent intent = new Intent(getActivity(), ManagerLogin.class);
                 startActivity(intent);
             }
         });

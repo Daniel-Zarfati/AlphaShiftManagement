@@ -9,28 +9,39 @@
     android:background="#28363D"
     tools:context=".view.NewRegisterActivity">
 
+
+
     <ImageView
         android:id="@+id/ProfileImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:paddingTop="50dp"
+        android:scaleType="fitXY"
         android:clickable="true"
-        android:background="@drawable/okwhite"
-        android:layout_marginTop="25dp"/>
-<!--        android:onClick="ChooseImageProfile"-->
-
+        android:background="@drawable/uploadimagelogocolors"
+        android:layout_marginTop="40dp"
+        />
 
     <TextView
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
         android:text="Welcome to TQS"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
         android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/browseimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Upload Profile Pic"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:backgroundTint="?attr/colorAccent"/>
 
     <EditText
         android:id="@+id/ET_Name"
@@ -124,16 +135,5 @@
         android:textColor="@android:color/white"
         android:textSize="15sp"
         android:backgroundTint="?attr/colorAccent"/>
-
-    <!-- <Button
-        android:id="@+id/ShowProfile_SI"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Show Profile"
-        android:onClick="showProfile"
-        android:backgroundTint="?attr/colorAccent"/>
-           android:onClick="ShowProfile"-->
-
-
 
 </LinearLayout>
